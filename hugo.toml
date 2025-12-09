@@ -1,8 +1,96 @@
-baseURL = 'https://directory.washingtonhotsprings.com/'
+baseURL = 'https://www.soakcolorado.com/'
 languageCode = 'en-us'
-title = 'Washington Hot Springs Directory'
+title = 'Colorado Hot Springs Directory'
 
+# Enable data files
 enableData = true
 
+# Enable Git info for last-modified dates
+enableGitInfo = true
+
+# Disable unnecessary features
+disableKinds = ['taxonomy', 'term']
+
+# Configure outputs for API endpoints and JSON data
 [outputs]
+  home = ["HTML", "JSON"]
   section = ["HTML", "JSON"]
+  page = ["HTML"]
+
+# Output format definitions
+[outputFormats.JSON]
+  mediaType = "application/json"
+  isPlainText = true
+  baseName = "index"
+
+# Pagination
+paginate = 20
+paginatePath = "page"
+
+# Markup configuration for content
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'github'
+    lineNos = true
+    tabWidth = 2
+
+# Permalink structure
+[permalinks]
+  springs = "/springs/:slug/"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "All Hot Springs"
+    url = "/springs/"
+    weight = 20
+
+# Privacy configuration for external services
+[privacy]
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
+
+# Site parameters
+[params]
+  # Site description
+  description = "Complete guide to natural hot springs in Colorado"
+  
+  # Author information
+  author = "Colorado Hot Springs Directory"
+  
+  # OpenGraph and Twitter card settings
+  images = ["images/hot-springs-og.jpg"]
+  
+  # Map configuration
+  [params.map]
+    defaultLat = 39.0
+    defaultLng = -105.5
+    defaultZoom = 7
+    
+  # Features
+  [params.features]
+    weather = true
+    directions = true
+    geolocation = true
+    search = true
+    
+  # Date format
+  dateFormat = "January 2, 2006"
+
+# Taxonomies (intentionally empty due to disableKinds)
+[taxonomies]

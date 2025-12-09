@@ -1,0 +1,5 @@
+# Teable API Configuration
+# Copy this file to .teable-config and add your actual API token
+# DO NOT commit .teable-config to version control!
+
+TEABLE_API_TOKEN='your_api_token_here'

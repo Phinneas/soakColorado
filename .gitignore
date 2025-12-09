@@ -23,3 +23,8 @@ node_modules/
 
 # Hugo cache
 .hugo_build.lock
+
+# API tokens and secrets
+.teable-config
+.env
+*.env.local
